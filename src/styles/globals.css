@@ -1,0 +1,360 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+@import "tw-animate-css";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+/* React Flow */
+.react-flow__edge-path {
+  stroke: #6d6d6d !important;
+  stroke-width: 2 !important;
+  fill: none !important;
+  opacity: 0.6 !important;
+}
+
+.react-flow__arrowhead {
+  fill: #6d6d6d !important;
+  opacity: 0.6 !important;
+}
+
+.react-flow__edge {
+  pointer-events: none !important;
+}
+
+.react-flow__edges {
+  z-index: 1 !important;
+}
+
+/* Ensure SVG elements are visible */
+.react-flow__renderer {
+  z-index: 1 !important;
+}
+
+.react-flow__edge-path,
+.react-flow__connection-path {
+  stroke: #6d6d6d !important;
+  stroke-width: 2 !important;
+  fill: none !important;
+  opacity: 0.6 !important;
+}
+
+/* Hide React Flow Attribution */
+.react-flow__attribution {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* This is the original shadcn dark theme, now changed to root theme */
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0); /* oklch(0.141 0.005 285.823) */
+  --foreground: oklch(0.145 0 0); /* oklch(0.985 0 0) */
+  --card: oklch(1 0 0); /* oklch(0.21 0.006 285.885) */
+  --card-foreground: oklch(0.145 0 0); /* oklch(0.985 0 0) */
+  --popover: oklch(1 0 0); /* oklch(0.21 0.006 285.885) */
+  --popover-foreground: oklch(0.145 0 0); /* oklch(0.985 0 0) */
+  --primary: oklch(0.205 0 0); /* oklch(0.696 0.17 162.48)  */
+  --primary-foreground: oklch(0.985 0 0); /* oklch(0.393 0.095 152.535) */
+  --secondary: oklch(0.97 0 0); /* oklch(0.274 0.006 286.033) */
+  --secondary-foreground: oklch(0.205 0 0); /* oklch(0.985 0 0) */
+  --muted: oklch(0.97 0 0); /* oklch(0.274 0.006 286.033) */
+  --muted-foreground: oklch(0.556 0 0); /* oklch(0.705 0.015 286.067) */
+  --accent: oklch(0.97 0 0); /* oklch(0.274 0.006 286.033) */
+  --accent-foreground: oklch(0.205 0 0); /* oklch(0.985 0 0) */
+  --destructive: oklch(0.577 0.245 27.325); /* oklch(0.704 0.191 22.216) */
+  --border: oklch(0.922 0 0); /* oklch(1 0 0 / 40%) */
+  --input: oklch(0.922 0 0); /* oklch(1 0 0 / 15%) */
+  --ring: oklch(0.708 0 0); /* oklch(0.527 0.154 150.069) */
+  --chart-1: oklch(0.646 0.222 41.116); /* oklch(0.488 0.243 264.376) */
+  --chart-2: oklch(0.6 0.118 184.704); /* oklch(0.696 0.17 162.48) */
+  --chart-3: oklch(0.398 0.07 227.392); /* oklch(0.769 0.188 70.08) */
+  --chart-4: oklch(0.828 0.189 84.429); /* oklch(0.627 0.265 303.9) */
+  --chart-5: oklch(0.769 0.188 70.08); /* oklch(0.645 0.246 16.439) */
+  --sidebar: oklch(0.985 0 0); /* oklch(0.21 0.006 285.885) */
+  --sidebar-foreground: oklch(0.145 0 0); /* oklch(0.985 0 0) */
+  --sidebar-primary: oklch(0.205 0 0); /* oklch(0.696 0.17 162.48) */
+  --sidebar-primary-foreground: oklch(0.985 0 0); /* oklch(0.393 0.095 152.535) */
+  --sidebar-accent: oklch(0.97 0 0); /* oklch(0.274 0.006 286.033) */
+  --sidebar-accent-foreground: oklch(0.205 0 0); /* oklch(0.985 0 0) */
+  --sidebar-border: oklch(0.922 0 0); /* oklch(1 0 0 / 10%) */
+  --sidebar-ring: oklch(0.708 0 0); /* oklch(0.527 0.154 150.069) */
+
+  /* Disabled background color */
+  --disabled: #232327;
+  --disabledText: #3b3b3d;
+
+  /* Order status color */
+  --Storing: #4db325;
+  --OnSale: #b0b306;
+  --Waiting: #e28b19;
+  --Paid: #c7480d;
+  --Refunding: #bd0fb4;
+  --InSecrecy: #5e0fdd;
+  --Published: #3d63e0;
+  --Blacklisted: #4f5055;
+
+  --theme: #c6a9fc;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+
+  --font-title: 'Hammersmith One', sans-serif;
+  --font-brand: 'Wallpoet', cursive;
+  --font-p: 'mono', sans-serif;
+
+  --gradient-background: var(--gradient-background);
+
+  --color-theme: var(--theme);
+
+  --color-error: #ff4d4f;
+  --color-success: #52c41a;
+  --color-warning: #faad14;
+
+  /* Business status color - mapped to Tailwind */
+  --color-Storing: var(--Storing);
+  --color-OnSale: var(--OnSale);
+  --color-Waiting: var(--Waiting);
+  --color-Paid: var(--Paid);
+  --color-Refunding: var(--Refunding);
+  --color-InSecrecy: var(--InSecrecy);
+  --color-Blacklisted: var(--Blacklisted);
+  --color-Published: var(--Published);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+} 
+
+p, span, div, text {
+  font-family: var(--font-mono);
+  /* color: var(--text-white-70); */
+  /*letter-spacing: -0.05em;  /* Reduce letter spacing */
+  word-spacing: -0.2em;
+}
+
+/* Restore basic styles */
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  color: white;
+  background: black;
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Small screen device */
+@media (min-width: 480px) {
+
+}
+
+/* Mobile responsive */
+@media (min-width: 768px) {
+
+  /* main {
+    padding: 0 2rem;
+  } */
+
+  /* h1,
+  .text-hero {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  h5 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  h6 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  } */
+
+}
+
+/* Tablet responsive */
+@media (min-width: 1024px) {
+  /* main {
+    padding: 0 2rem;
+  } */
+  /* p {
+    font-size: 1rem;
+  } */
+}
+
+@media (min-width: 1440px) {
+  /* main {
+    padding: 0 0rem;
+  } */
+  /* p {
+    font-size: 1.1rem;
+  } */
+}
+/* public path */
+/* @font-face {
+  font-family: 'STSong';
+  src: url('/font/STSONG.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* StatusStepFlow horizontal scroll style optimization */
+.status-step-flow-container {
+  /* Custom scroll bar style */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.status-step-flow-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.status-step-flow-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.status-step-flow-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.status-step-flow-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Smooth scrolling */
+.status-step-flow-container {
+  scroll-behavior: smooth;
+}
+
+/* Hide scroll bar */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
