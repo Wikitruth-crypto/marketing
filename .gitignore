@@ -28,7 +28,7 @@
 /out/
 
 # vite
-/dist
+# /dist
 /dist-ssr
 *.local
 
