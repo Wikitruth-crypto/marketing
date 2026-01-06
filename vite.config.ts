@@ -36,51 +36,26 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    // Code splitting optimization
+    // Code splitting
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Split node_modules dependencies into separate chunks
+          // Only split Three.js (largest library and not dependent on React)
+          if (id.includes('node_modules/three')) {
+            return 'three-vendor'
+          }
+          // All other node_modules dependencies are put in vendor to ensure correct loading order
           if (id.includes('node_modules')) {
-            // React core libraries
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              return 'react-vendor'
-            }
-            // Three.js 3D library (large size, split separately)
-            if (id.includes('three')) {
-              return 'three-vendor'
-            }
-            // Ant Design UI library
-            if (id.includes('antd')) {
-              return 'ui-vendor'
-            }
-            // Motion animation library (relatively large, split separately)
-            if (id.includes('motion')) {
-              return 'motion-vendor'
-            }
-            // Web3 related libraries
-            if (id.includes('viem')) {
-              return 'web3-vendor'
-            }
-            // Icon libraries
-            if (id.includes('lucide-react') || id.includes('react-icons')) {
-              return 'icons-vendor'
-            }
-            // React Flow chart library
-            if (id.includes('@xyflow')) {
-              return 'flow-vendor'
-            }
-            // Other third-party libraries
             return 'vendor'
           }
         }
       }
     },
-    // Lower chunk size warning limit for better bundle size control
-    chunkSizeWarningLimit: 800,
+    // Increase chunk size warning threshold
+    chunkSizeWarningLimit: 1000,
   },
 
-  // Optimize dependency pre-bundling
+  // Optimize dependencies pre-building
   optimizeDeps: {
     include: [
       'react',
@@ -88,9 +63,10 @@ export default defineConfig({
       'react-router-dom',
       'viem',
       'antd',
+      'motion/react',
     ],
     exclude: [
-      // Exclude dependencies that don't need pre-bundling
+      // Exclude dependencies that don't need pre-building
     ]
   },
 
