@@ -84,8 +84,8 @@ const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
             // 'Waiting': ['Storing', listedMode, 'Waiting'],
             'Paid': ['Storing', listedMode, 'Paid'],
             'Refunding': ['Storing', listedMode, 'Paid', 'Refunding'],
-            'InSecrecy': ['Storing', listedMode, 'Paid', 'InSecrecy'],
-            'Published': ['Storing', listedMode, 'Paid', 'InSecrecy', 'Published'],
+            'Delaying': ['Storing', listedMode, 'Paid', 'Delaying'],
+            'Published': ['Storing', listedMode, 'Paid', 'Delaying', 'Published'],
             'Blacklisted': ['Storing', 'Blacklisted']
         };
 
@@ -101,7 +101,7 @@ const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
                 selling: { x: 120, y: 20 },
                 auctioning: { x: 120, y: 60 },
                 paid: { x: 240, y: 40 },
-                inSecrecy: { x: 360, y: 20 },
+                Delaying: { x: 360, y: 20 },
                 refunding: { x: 360, y: 60 },
                 published: { x: 480, y: 40 }
             },
@@ -110,7 +110,7 @@ const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
                 selling: { x: 150, y: 30 },
                 auctioning: { x: 150, y: 90 },
                 paid: { x: 300, y: 60 },
-                inSecrecy: { x: 450, y: 30 },
+                Delaying: { x: 450, y: 30 },
                 refunding: { x: 450, y: 90 },
                 published: { x: 600, y: 60 }
             },
@@ -119,7 +119,7 @@ const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
                 selling: { x: 200, y: 40 },
                 auctioning: { x: 200, y: 120 },
                 paid: { x: 400, y: 80 },
-                inSecrecy: { x: 600, y: 40 },
+                Delaying: { x: 600, y: 40 },
                 refunding: { x: 600, y: 120 },
                 published: { x: 800, y: 80 }
             }
@@ -180,12 +180,12 @@ const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
                 type: 'statusNode'
             },
             {
-                id: 'inSecrecy',
-                position: positions.inSecrecy,
+                id: 'Delaying',
+                position: positions.Delaying,
                 data: {
-                    status: 'InSecrecy' as BoxStatus,
-                    isActive: isStatusActive('InSecrecy'),
-                    isCurrent: status === 'InSecrecy',
+                    status: 'Delaying' as BoxStatus,
+                    isActive: isStatusActive('Delaying'),
+                    isCurrent: status === 'Delaying',
                     size,
                     responsive
                 },
@@ -241,9 +241,9 @@ const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
             target: 'paid'
         },
         {
-            id: 'paid-inSecrecy',
+            id: 'paid-Delaying',
             source: 'paid',
-            target: 'inSecrecy'
+            target: 'Delaying'
         },
         {
             id: 'paid-refunding',
@@ -251,8 +251,8 @@ const StatusStepFlow: React.FC<StatusStepFlowProps> = ({
             target: 'refunding'
         },
         {
-            id: 'inSecrecy-published',
-            source: 'inSecrecy',
+            id: 'Delaying-published',
+            source: 'Delaying',
             target: 'published'
         },
         {

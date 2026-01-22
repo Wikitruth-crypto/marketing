@@ -71,7 +71,7 @@ const StatusStep: React.FC<StatusStepProps> = ({
 
     // const statusOptions: BoxStatus[] = [
     //     'Storing', 'Selling', 'Auctioning',
-    //     'Paid', 'Refunding', 'InSecrecy', 'Published'
+    //     'Paid', 'Refunding', 'Delaying', 'Published'
     // ];
 
     // Automatically scroll to the corresponding position (x-axis) based on the status value

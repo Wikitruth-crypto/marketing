@@ -19,7 +19,7 @@ export type FunctionNameType_TruthBox =
 'createAndPublish' |
 'publishByMinter' | 
 'publishByBuyer' | 
-'payConfiFee' |
+'payDelayFee' |
 'addBoxToBlacklist' |
 'extendDeadline';
 
@@ -30,7 +30,7 @@ export const boxStatus = [
     'Auctioning',
     'Paid',
     'Refunding',
-    'InSecrecy',
+    'Delaying',
     'Published',
     'Blacklisted',
 ] as const;

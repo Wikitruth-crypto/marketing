@@ -26,11 +26,11 @@ export default defineConfig({
   },
 
   // Development server configuration
-  server: {
-    port: 5173,
-    host: true,
-    open: true,
-  },
+  // server: {
+  //   port: 5173,
+  //   host: true,
+  //   open: true,
+  // },
 
   // Build configuration
   build: {

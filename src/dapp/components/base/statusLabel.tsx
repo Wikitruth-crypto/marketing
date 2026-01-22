@@ -35,7 +35,7 @@ export default function StatusLabel({
                 return 'green';
             case 'Refunding':
                 return 'red';
-            case 'InSecrecy':
+            case 'Delaying':
                 return 'purple';
             case 'Published':
                 return 'lime';
